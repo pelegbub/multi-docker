@@ -1,12 +1,13 @@
-language: generic
 sudo: required
-services: 
+language: generic
+
+services:
   - docker
 
-before_install: 
+before_install:
   - docker build -t pelegbub/react-test -f ./client/Dockerfile.dev ./client
 
-scripts: 
+script:
  - docker run -e CI=true pelegbub/react-test npm test
 
 after_success:
