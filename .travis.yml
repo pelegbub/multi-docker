@@ -18,11 +18,10 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push pelegb999/push
   - docker push pelegb999/multi-client
   - docker push pelegb999/multi-nginx
   - docker push pelegb999/multi-server
   - docker push pelegb999/multi-worker
 
 
-  #peleg bublil second test
+  #peleg bublil second test 5 
