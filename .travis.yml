@@ -5,23 +5,23 @@ services:
   - docker
 
 before_install:
-  - docker build -t project/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t pelegb999/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true project/react-test npm test
+  - docker run -e CI=true pelegb999/react-test npm test
 
 after_success:
-  - docker build -t project/multi-client ./client
-  - docker build -t project/multi-nginx ./nginx
-  - docker build -t project/multi-server ./server
-  - docker build -t project/multi-worker ./worker
+  - docker build -t pelegb999/multi-client ./client
+  - docker build -t pelegb999/multi-nginx ./nginx
+  - docker build -t pelegb999/multi-server ./server
+  - docker build -t pelegb999/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push project/multi-client
-  - docker push project/multi-nginx
-  - docker push project/multi-server
-  - docker push project/multi-worker
+  - docker push pelegb999/multi-client
+  - docker push pelegb999/multi-nginx
+  - docker push pelegb999/multi-server
+  - docker push pelegb999/multi-worker
 
 
   #peleg bublil second test
