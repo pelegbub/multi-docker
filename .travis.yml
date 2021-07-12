@@ -22,3 +22,6 @@ after_success:
   - docker push project/multi-nginx
   - docker push project/multi-server
   - docker push project/multi-worker
+
+
+  #peleg
