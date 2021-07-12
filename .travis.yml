@@ -16,7 +16,7 @@ after_success:
   - docker build -t project/multi-server ./server
   - docker build -t project/multi-worker ./worker
   # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push project/multi-client
   - docker push project/multi-nginx
@@ -24,4 +24,4 @@ after_success:
   - docker push project/multi-worker
 
 
-  #peleg
+  #peleg bublil
