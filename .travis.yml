@@ -23,5 +23,15 @@ after_success:
   - docker push pelegb999/multi-server
   - docker push pelegb999/multi-worker
 
-
-  #peleg bublil second test 5 
+deploy:
+  provider: elasticbeanstlak
+  region: eu-central-1
+  app: multi-docker
+  env: Multidocker-env-1
+  bucket_name: elasticbeanstalk-eu-central-1-606384754396
+  bucket_path: docker-multi
+  on:
+    branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+  
