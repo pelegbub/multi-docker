@@ -23,7 +23,7 @@ after_success:
   - docker push pelegb999/multi-server
   - docker push pelegb999/multi-worker
 
-#deploy to aws
+#deploy to aws cloud
 
 deploy:
   provider: elasticbeanstlak
